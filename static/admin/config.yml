@@ -1,6 +1,5 @@
 backend:
-    name: github
-    repo: mifta17/miftahuddin-site
+    name: git-gateway
     branch: master
     commit_messages:
         create: "Create {{collection}} “{{slug}}”"
