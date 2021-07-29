@@ -33,11 +33,15 @@ collections:
                 name: "type",
                 widget: "select",
                 options:
-                  - { label: "Blog", value: "blog", }
-                  - { label: "Project", value: "project", },
+                    [
+                        "BLOG",
+                        "PROJECT",
+                    ],
                 default:
-                  - { label: "Blog", value: "blog", }
-          }
+                    [
+                        "BLOG",
+                    ],
+            }
           - {
                 label: "Description",
                 name: "description",
@@ -85,11 +89,15 @@ collections:
                 name: "type",
                 widget: "select",
                 options:
-                  - { label: "Blog", value: "blog", }
-                  - { label: "Project", value: "project", },
+                    [
+                        "BLOG",
+                        "PROJECT",
+                    ],
                 default:
-                  - { label: "Blog", value: "blog", }
-          }
+                    [
+                        "BLOG",
+                    ],
+            }
           - {
                 label: "Featured Image",
                 name: "featuredimage",
