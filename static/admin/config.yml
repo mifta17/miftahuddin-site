@@ -29,6 +29,14 @@ collections:
                 widget: "datetime",
             }
           - {
+                label: "Type Content",
+                name: "type",
+                widget: "select",
+                options:
+                  - { label: "Blog", value: "blog" }
+                  - { label: "Project", value: "project" }
+            }
+          - {
                 label: "Description",
                 name: "description",
                 widget: "text",
@@ -71,14 +79,12 @@ collections:
                 widget: "datetime",
             }
           - {
-                label: "Description",
-                name: "description",
-                widget: "text",
-            }
-          - {
-                label: "Featured Post",
-                name: "featuredpost",
-                widget: "boolean",
+                label: "Type Content",
+                name: "type",
+                widget: "select",
+                options:
+                  - { label: "Blog", value: "blog" }
+                  - { label: "Project", value: "project" }
             }
           - {
                 label: "Featured Image",
@@ -86,9 +92,21 @@ collections:
                 widget: image,
             }
           - {
-                label: "Body",
-                name: "body",
-                widget: "markdown",
+                label: "Description",
+                name: "description",
+                widget: "text",
+            }
+          - {
+                label: "Github",
+                name: "github",
+                widget: "string",
+                required: false,
+            }
+          - {
+                label: "Demo",
+                name: "demo",
+                widget: "string",
+                required: false,
             }
           - {
                 label: "Tags",
