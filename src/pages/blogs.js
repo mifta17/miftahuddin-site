@@ -23,7 +23,7 @@ export const query = graphql`
   query BlogsQuery {
     allMdx(
       sort: {order: DESC, fields: frontmatter___date}
-      filter: {frontmatter: {type: {eq: "blog"}}}
+      filter: {frontmatter: {type: {eq: "BLOG"}}}
     ) {
       nodes {
         frontmatter {

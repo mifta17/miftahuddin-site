@@ -23,7 +23,7 @@ export const query = graphql`
   query ProjectsQuery {
     allMdx(
       sort: {order: DESC, fields: frontmatter___date}
-      filter: {frontmatter: {type: {eq: "project"}}}
+      filter: {frontmatter: {type: {eq: "PROJECT"}}}
     ) {
       nodes {
         frontmatter {
