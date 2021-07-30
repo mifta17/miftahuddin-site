@@ -1,6 +1,9 @@
 import * as React from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import { Helmet } from "react-helmet"
+import Navbar from "./navbar"
+
+import "../styles/global.css"
 
 const Layout = ({ pageTitle, children }) => {
   const data = useStaticQuery(graphql`
@@ -8,6 +11,7 @@ const Layout = ({ pageTitle, children }) => {
       site{
         siteMetadata{
           title
+          description
         }
       }
     }
@@ -15,16 +19,19 @@ const Layout = ({ pageTitle, children }) => {
 
   return (
     <main>
-      <Helmet title={pageTitle + " | " + data.site.siteMetadata.title} defer={false}></Helmet>
-      <nav>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/blogs">Blogs</Link></li>
-          <li><Link to="/projects">Projects</Link></li>
-        </ul>
-      </nav>
-      <h1>{pageTitle}</h1>
-      {children}
+      <Helmet>
+        <html lang="en" />
+        <title>{pageTitle} | {data.site.siteMetadata.title}</title>
+        <meta name="description" content={data.site.siteMetadata.description} />
+      </Helmet>
+      <Navbar />
+      <div className="py-5 px-4">
+        <div className="grid grid-cols-1 md:grid-cols-6">
+          <div className="md:col-start-2 md:col-span-4">
+            {children}
+          </div>
+        </div>
+      </div>
     </main>
   )
 }

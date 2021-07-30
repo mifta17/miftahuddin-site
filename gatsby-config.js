@@ -1,13 +1,16 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
+    siteUrl: "https://www.miftahuddin.my.id",
     title: "Miftahuddin",
+    description: "Web yang dibuat karena kegabutan."
   },
   plugins: [
     "gatsby-plugin-netlify-cms",
-    "gatsby-plugin-postcss",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
+    "gatsby-plugin-postcss",
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
