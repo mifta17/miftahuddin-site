@@ -9,6 +9,7 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     "gatsby-plugin-postcss",
+    "gatsby-plugin-dark-mode",
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     {

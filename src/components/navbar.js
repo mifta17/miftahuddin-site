@@ -2,20 +2,24 @@ import * as React from "react"
 import { Link } from "gatsby"
 
 import "../styles/navbar.module.css"
+import ThemeToggle from "./themeToggle.js"
 
 
 const Navbar = () => {
   return (
-    <nav class="py-1 px-4 border-b border-gray-300 flex justify-between">
-      <div class="font-bold text-xl py-2">
-        Miftahuddin
+    <nav className="border-b border-gray-300 mb-5 md:mt-10">
+      <div className="flex justify-between items-center mb-5">
+        <div className="font-bold text-3xl">
+          Miftahuddin
+        </div>
+        <ThemeToggle />
       </div>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/blogs">Blogs</Link></li>
-        <li><Link to="/projects">Projects</Link></li>
-      </ul>
-    </nav>
+      <div className="mb-5">
+        <Link className="mr-3 hover:underline font-bold" to="/">Home</Link>
+        <Link className="mr-3 hover:underline font-bold" to="/blogs">Blogs</Link>
+        <Link className="mr-3 hover:underline font-bold" to="/projects">Projects</Link>
+      </div>
+    </nav >
   )
 }
 

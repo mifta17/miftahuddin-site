@@ -6,17 +6,17 @@ import { Link } from "gatsby"
 const BlogsPage = ({ data }) => {
   return (
     <Layout pageTitle="Blogs Page">
-      <h1>Ini halaman untuk daftar blog</h1>
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <h2 className="font-bold text-2xl mb-5">Blog Post</h2>
+      <section>
         {
           data.allMdx.nodes.map(({ id, frontmatter, excerpt, slug }) => (
-            <article key={id} className="shadow-md rounded-lg p-4 bg-white">
-              <h2>
+            <article key={id} className="hover:shadow-md hover:bg-gray-200 rounded-lg p-4">
+              <p className="text-sm">{frontmatter.date}</p>
+              <h3 className="font-bold text-2xl">
                 <Link to={`/blog/${slug}`} className="font-bold inline-block mb-3 hover:text-green-600">
                   {frontmatter.title}
                 </Link>
-              </h2>
-              <p>{frontmatter.date}</p>
+              </h3>
               <p>{excerpt}</p>
             </article>
           ))
