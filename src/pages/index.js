@@ -36,7 +36,7 @@ const IndexPage = () => {
           <h1 className="font-bold text-3xl">Halo, Saya Miftahuddin</h1>
           <p>Saya orangnya gabut makanya saya buat beginian.</p>
           <div className="mt-3">
-            <Link className="font-bold hover:underline" to="/blogs">#Blogs</Link>
+            <Link className="font-bold hover:underline" to="/blog">#Blogs</Link>
             <span> . </span>
             <Link className="font-bold hover:underline" to="/projects">#Projects</Link>
           </div>

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { graphql } from "gatsby";
-import Layout from "../components/layout";
+import Layout from "../../components/layout";
 import { Link } from "gatsby";
 
 const BlogsPage = ({ data }) => {
@@ -18,7 +18,7 @@ const BlogsPage = ({ data }) => {
             </span>
             <h3>
               <Link
-                to={`blog/${slug}`}
+                to={`../blog/${slug}`}
                 className="text-2xl mb-3 font-bold inline-block hover:text-blue-400"
               >
                 {frontmatter.title}

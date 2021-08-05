@@ -40,7 +40,7 @@ const Navbar = () => {
             </Link>
             <Link
               className="text-sm flex items-center hover:bg-blue-400 hover:text-white rounded-md font-bold py-2 px-3"
-              to="/blogs"
+              to="/blog"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
