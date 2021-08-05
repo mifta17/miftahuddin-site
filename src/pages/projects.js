@@ -29,7 +29,9 @@ export const query = graphql`
         frontmatter {
           title
           date(formatString: "MMMM D, YYYY")
-          type
+          tags
+          featuredimage
+          description
         }
         excerpt(pruneLength: 50)
         id
