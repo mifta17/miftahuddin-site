@@ -9,7 +9,7 @@ const BlogsPage = ({ data }) => {
   return (
     <Layout pageTitle="Blog Post">
       {nodes.length === 0 ? (
-        <p className="text-center text-2xl">Belom ada heheheh &#128517;</p>
+        <p className="text-center text-xl mt-10">Belom ada hehehe &#128517;</p>
       ) : (
         <section className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {nodes.map(({ id, frontmatter, excerpt, slug }) => (

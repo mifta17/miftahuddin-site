@@ -19,7 +19,7 @@ const Navbar = () => {
         <div className="lg:col-span-10 lg:col-start-2">
           <div className="px-4 py-3 flex">
             <Link
-              className="text-sm flex items-center hover:bg-blue-400 hover:text-white rounded-md font-bold py-2 px-3"
+              className="text-sm flex items-center hover:underline rounded-md font-bold py-2 px-3 mx-1"
               to="/"
             >
               <svg
@@ -39,7 +39,8 @@ const Navbar = () => {
               Home
             </Link>
             <Link
-              className="text-sm flex items-center hover:bg-blue-400 hover:text-white rounded-md font-bold py-2 px-3"
+              className="text-sm flex items-center hover:underline rounded-md font-bold py-2 px-3 mx-1"
+              activeClassName="bg-blue-400 text-white"
               to="/blog"
             >
               <svg
@@ -59,7 +60,8 @@ const Navbar = () => {
               Blogs
             </Link>
             <Link
-              className="text-sm flex items-center hover:bg-blue-400 hover:text-white rounded-md font-bold py-2 px-3"
+              className="text-sm flex items-center hover:underline rounded-md font-bold py-2 px-3 mx-1"
+              activeClassName="bg-blue-400 text-white"
               to="/project"
             >
               <svg

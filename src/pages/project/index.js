@@ -9,7 +9,7 @@ const PeojectsPage = ({ data }) => {
     <Layout pageTitle="Project Post">
       { 
         nodes.length === 0 ? 
-        <p className="text-center text-2xl">Belom ada heheheh &#128517;</p> : 
+        <p className="text-center text-xl mt-10">Belom ada hehehe &#128517;</p> : 
         nodes.map(({ id, frontmatter, excerpt }) => (
           <article key={id}>
             <h1>{frontmatter.title}</h1>
