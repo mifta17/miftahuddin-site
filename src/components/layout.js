@@ -18,7 +18,7 @@ const Layout = ({ pageTitle, children }) => {
   `);
 
   return (
-    <div className="transition duration-300 ease-in-out bg-white dark:bg-gray-900 dark:text-white relative">
+    <div className="transition duration-300 ease-in-out dark:text-white relative">
       <Helmet>
         <html lang="en" />
         <title>
@@ -30,7 +30,10 @@ const Layout = ({ pageTitle, children }) => {
       <main>
         <div className="grid lg:grid-cols-12">
           <div className="md:col-span-10 md:col-start-2">
-            <div className="py-5 px-4">{children}</div>
+            <div className="py-5 px-4">
+              <h2 className="font-bold text-2xl mb-5">{pageTitle}</h2>
+              {children}
+            </div>
           </div>
         </div>
       </main>

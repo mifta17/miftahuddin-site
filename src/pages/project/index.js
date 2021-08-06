@@ -1,13 +1,16 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
+import Layout from "../../components/layout"
 
 const PeojectsPage = ({ data }) => {
+  const nodes = data.allMdx.nodes
+
   return (
-    <Layout pageTitle="Projects Page">
-      <h1>Ini halaman untuk daftar Project</h1>
-      {
-        data.allMdx.nodes.map(({ id, frontmatter, excerpt }) => (
+    <Layout pageTitle="Project Post">
+      { 
+        nodes.length === 0 ? 
+        <p className="text-center text-2xl">Belom ada heheheh &#128517;</p> : 
+        nodes.map(({ id, frontmatter, excerpt }) => (
           <article key={id}>
             <h1>{frontmatter.title}</h1>
             <p>{frontmatter.date}</p>
