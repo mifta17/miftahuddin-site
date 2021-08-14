@@ -7,6 +7,7 @@ const PeojectsPage = ({ data }) => {
 
   return (
     <Layout pageTitle="Project Post">
+      <h2 className="font-bold text-2xl mb-5">Project Post</h2>
       { 
         nodes.length === 0 ? 
         <p className="text-center text-xl mt-10">Belom ada hehehe &#128517;</p> : 
@@ -26,7 +27,7 @@ export const query = graphql`
   query ProjectsQuery {
     allMdx(
       sort: {order: DESC, fields: frontmatter___date}
-      filter: {frontmatter: {type: {eq: "PROJECT"}}}
+      filter: {frontmatter: {type: {eq: "PROJECT"}, draft: {in: false}}}
     ) {
       nodes {
         frontmatter {

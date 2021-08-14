@@ -8,6 +8,7 @@ const BlogsPage = ({ data }) => {
 
   return (
     <Layout pageTitle="Blog Post">
+      <h2 className="font-bold text-2xl mb-5">Blog Post</h2>
       {nodes.length === 0 ? (
         <p className="text-center text-xl mt-10">Belom ada hehehe &#128517;</p>
       ) : (
@@ -28,12 +29,12 @@ const BlogsPage = ({ data }) => {
                   {frontmatter.title}
                 </Link>
               </h3>
-              <p className="mb-10">
+              <p className="mb-10 text-md">
                 {frontmatter.description ? frontmatter.description : excerpt}
               </p>
               <div className="absolute bottom-0 my-5">
                 {frontmatter.tags.map((tag) => (
-                  <span className="inline-block mr-3">#{tag}</span>
+                  <span className="inline-block mr-1 text-sm font-bold">#{tag}</span>
                 ))}
               </div>
             </article>
@@ -48,7 +49,7 @@ export const query = graphql`
   query BlogsQuery {
     allMdx(
       sort: { order: DESC, fields: frontmatter___date }
-      filter: { frontmatter: { type: { eq: "BLOG" } } }
+      filter: { frontmatter: { type: { eq: "BLOG" }, draft: {in: false}} }
     ) {
       nodes {
         frontmatter {

@@ -4,6 +4,7 @@ date: 2021-08-13T23:12:56.548Z
 type: BLOG
 description: Ini cuma contoh wkwkwk
 featuredpost: true
+draft: true
 featuredimage: /img/3037905.jpg
 tags:
   - lorem

@@ -4,6 +4,7 @@ date: 2021-08-13T23:18:06.978Z
 type: BLOG
 description: Ini cuma contoh hehehe
 featuredpost: true
+draft: true
 featuredimage: /img/3037905.jpg
 tags:
   - dolor
