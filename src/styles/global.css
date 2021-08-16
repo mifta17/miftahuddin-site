@@ -10,3 +10,8 @@ body {
 body.dark {
   --bg: #111827;
 }
+
+article p{
+  margin-bottom: 1.5rem;
+  line-height: 2.5rem;
+}

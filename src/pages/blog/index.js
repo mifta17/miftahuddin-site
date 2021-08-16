@@ -13,9 +13,9 @@ const BlogsPage = ({ data }) => {
         <p className="text-center text-xl mt-10">Belom ada hehehe &#128517;</p>
       ) : (
         <section className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {nodes.map(({ id, frontmatter, excerpt, slug }) => (
+          {nodes.map(({ id, frontmatter, excerpt, slug }, index) => (
             <article
-              key={id}
+              key={index}
               className="rounded-lg p-4 shadow-lg dark:bg-gray-800 relative"
             >
               <span className="text-xs mb-3 inline-block">
