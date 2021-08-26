@@ -3,7 +3,7 @@ title: PUZZLE XII IPA 4
 date: 2021-08-26T05:42:20.096Z
 type: BLOG
 description: Gambar apa hayooo.
-draft: true
+draft: false
 tags:
   - Puzzle
 ---
