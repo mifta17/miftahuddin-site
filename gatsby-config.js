@@ -42,5 +42,11 @@ module.exports = {
       },
       __key: "project",
     },
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `miftahuddin`
+      }
+    },
   ],
 };

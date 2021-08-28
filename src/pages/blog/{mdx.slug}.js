@@ -3,12 +3,13 @@ import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import Layout from "../../components/layout";
 import NotFoundPage from "../404";
+import { Disqus } from 'gatsby-plugin-disqus';
 
 const BlogPost = ({ data }) => {
   return (
     data.mdx == null ? NotFoundPage : (
       <Layout pageTitle={data.mdx.frontmatter.title}>
-        <article key={data.mdx.id}>
+        <article>
           <div className="text-center mb-5">
             <h2 className="text-3xl">{data.mdx.frontmatter.title}</h2>
             <p className="text-sm">{data.mdx.frontmatter.date}</p>
@@ -21,6 +22,12 @@ const BlogPost = ({ data }) => {
           <div className="grid md:grid-cols-6">
             <div className="col-span-4 col-start-2 text-xl">
               <MDXRenderer>{data.mdx.body}</MDXRenderer>
+
+              <Disqus config={{ 
+                url: `${data.site.siteMetadata.siteUrl}/blog/${data.mdx.slug}`, 
+                identifier: data.mdx.id, 
+                title: data.mdx.frontmatter.title 
+              }} />
             </div>
           </div>
         </article>
@@ -39,6 +46,12 @@ export const query = graphql`
       }
       body
       id
+      slug
+    }
+    site {
+      siteMetadata {
+        siteUrl
+      }
     }
   }
 `;
