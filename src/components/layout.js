@@ -1,43 +1,59 @@
-import * as React from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import { Helmet } from "react-helmet";
-import Navbar from "./navbar";
+import * as React from "react"
+import { Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
+import { FaTwitter, FaInstagram } from "react-icons/fa"
 
-import "../styles/global.css";
+const Layout = ({ location, title, children }) => {
+  const rootPath = `${__PATH_PREFIX__}/`
+  const isRootPath = location.pathname === rootPath
 
-const Layout = ({ pageTitle, children }) => {
   const data = useStaticQuery(graphql`
-    query {
+    query HeroQuery {
       site {
         siteMetadata {
-          title
-          description
+          social {
+            twitter
+            instagram
+          }
         }
       }
     }
-  `);
+  `)
+
+  // Set these values by editing "siteMetadata" in gatsby-config.js
+  const social = data.site.siteMetadata?.social
 
   return (
-    <div className="transition duration-300 ease-in-out dark:text-white relative">
-      <Helmet>
-        <html lang="en" />
-        <title>
-          {pageTitle} | {data.site.siteMetadata.title}
-        </title>
-        <meta name="description" content={data.site.siteMetadata.description} />
-      </Helmet>
-      <Navbar />
-      <main>
-        <div className="grid lg:grid-cols-12">
-          <div className="md:col-span-10 md:col-start-2">
-            <div className="py-5 px-4">
-              {children}
+    <div data-is-root-path={isRootPath}>
+      <header className="global-header">
+        <nav className="navbar">
+          <div className="global-wrapper flex justify-between items-center">
+            <Link className="brand" to="/">{title}</Link>
+            <div className="text-center flex text-xl">
+              <a className="text-blue-900 hover:text-gray-900" href={`https://twitter.com/${social?.twitter || ``}`}>
+                <FaTwitter />
+              </a>
+              <a className="text-blue-900 hover:text-gray-900 ml-3" href={`https://www.instagram.com/${social?.instagram || ``}`}>
+                <FaInstagram />
+              </a>
             </div>
           </div>
+        </nav>
+      </header>
+      <main className="main">
+        <div className="global-wrapper">
+          {children}
         </div>
       </main>
+      <footer className="bg-white py-2">
+        <div className="global-wrapper text-center">
+          © {new Date().getFullYear()} {title}, Built with
+          {` `}
+          <a href="https://www.gatsbyjs.com">Gatsby</a>
+        </div>
+      </footer>
     </div>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

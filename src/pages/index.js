@@ -1,49 +1,84 @@
 import * as React from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
-import { Helmet } from "react-helmet"
-import { StaticImage } from "gatsby-plugin-image"
-import ThemeToggle from "../components/themeToggle"
+import { Link, graphql } from "gatsby"
+import Layout from "../components/layout"
+import Seo from "../components/seo"
 
+const BlogIndex = ({ data, location }) => {
+  const siteTitle = data.site.siteMetadata?.title || `Title`
+  const posts = data.allMarkdownRemark.nodes
 
-const IndexPage = () => {
-  const data = useStaticQuery(graphql`
-    query{
-      site{
-        siteMetadata{
+  if (posts.length === 0) {
+    return (
+      <Layout location={location} title={siteTitle}>
+        <Seo title="All posts" />
+        <p className="text-center text-xl">
+          No blog posts found.
+        </p>
+      </Layout>
+    )
+  }
+
+  return (
+    <Layout location={location} title={siteTitle}>
+      <Seo title="All posts" />
+      <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-1 gap-4">
+        {posts.map(post => {
+          const title = post.frontmatter.title || post.fields.slug
+          return (
+            <article
+              className="post-list-item md:flex"
+              itemScope
+              itemType="http://schema.org/Article"
+            >
+              <img className="thumbnail" src={post.frontmatter.thumbnail} alt={post.frontmatter.title} />
+              <div className="px-4 py-3 flex flex-col justify-between">
+                <section className="post-item-body">
+                  <h2 className="post-item-header">
+                    <Link to={post.fields.slug} itemProp="url">
+                      <span itemProp="headline">{title}</span>
+                    </Link>
+                  </h2>
+                  <p className="text-sm"
+                    dangerouslySetInnerHTML={{
+                      __html: post.frontmatter.description || post.excerpt,
+                    }}
+                    itemProp="description"
+                  />
+                </section>
+                <section className="post-item-footer">
+                  <small className="text-xs">{post.frontmatter.date}</small>
+                </section>
+              </div>
+            </article>
+          )
+        })}
+      </div>
+    </Layout>
+  )
+}
+
+export default BlogIndex
+
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      nodes {
+        excerpt(pruneLength: 100)
+        fields {
+          slug
+        }
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
           title
+          thumbnail
           description
         }
       }
     }
-  `)
-
-  return (
-    <main className="absolute w-full h-full flex items-center justify-center dark:text-white transition-all duration-300">
-      <Helmet>
-        <html lang="en" />
-        <title>{data.site.siteMetadata.title}</title>
-        <meta name="description" content={data.site.siteMetadata.description} />
-      </Helmet>
-      <div className="fixed md:right-10 top-10 right-5" >
-        <ThemeToggle />
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-6 px-3">
-        <div className="md:col-start-2 md:col-span-4 text-center">
-          <StaticImage
-            width={150} alt="Profile Picture" className="rounded-full mb-5"
-            src="../images/profile.jpg"
-          />
-          <h1 className="font-bold text-3xl">Halo, Saya Miftahuddin</h1>
-          <p>Saya orangnya gabut makanya saya buat beginian.</p>
-          <div className="mt-3">
-            <Link className="font-bold hover:underline" to="/blog">#Blogs</Link>
-            <span> . </span>
-            <Link className="font-bold hover:underline" to="/project">#Projects</Link>
-          </div>
-        </div>
-      </div>
-    </main>
-  )
-}
-
-export default IndexPage
+  }
+`
