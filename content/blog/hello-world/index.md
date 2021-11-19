@@ -1,5 +1,5 @@
 ---
-thumbnail: /static/images/thumbs/137167_cat-desktop-background.jpg
+thumbnail:
 title: Hello World
 date: 2015-05-01T22:12:03.284Z
 description: Hello World

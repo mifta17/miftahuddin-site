@@ -307,7 +307,7 @@ a:focus {
   @apply text-gray-600
 }
 
-.post-list-item .thumbnail {
+.post-list-item .thumbnail img {
   @apply object-cover h-40 w-full rounded-t-lg;
 }
 
@@ -369,7 +369,7 @@ a:focus {
 }
 
 @media screen(md) {
-  .post-list-item .thumbnail {
+  .post-list-item .thumbnail img {
     @apply w-40 h-full rounded-tr-none rounded-l-lg;
   }
 }

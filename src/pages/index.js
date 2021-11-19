@@ -2,6 +2,7 @@ import * as React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -23,6 +24,7 @@ const BlogIndex = ({ data, location }) => {
       <Seo title="All posts" />
       <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-1 gap-4">
         {posts.map(post => {
+          const image = getImage(post.frontmatter.thumbnail)
           const title = post.frontmatter.title || post.fields.slug
           return (
             <article
@@ -30,8 +32,8 @@ const BlogIndex = ({ data, location }) => {
               itemScope
               itemType="http://schema.org/Article"
             >
-              <img className="thumbnail" src="" alt={post.frontmatter.title} />
-              <div className="px-4 py-3 flex flex-col justify-between">
+              <GatsbyImage className="thumbnail w-full md:w-auto" image={image} alt={post.frontmatter.title} />
+              <div className="px-4 py-3 md:flex-1 flex flex-col justify-between">
                 <section className="post-item-body">
                   <h2 className="post-item-header">
                     <Link to={post.fields.slug} itemProp="url">
@@ -75,7 +77,11 @@ export const pageQuery = graphql`
         frontmatter {
           date(formatString: "MMMM DD, YYYY")
           title
-          thumbnail
+          thumbnail {
+            childImageSharp {
+              gatsbyImageData(formats: AUTO)
+            }
+          }
           description
         }
       }

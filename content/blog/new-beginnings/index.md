@@ -2,7 +2,7 @@
 title: New Beginnings
 date: "2015-05-28T22:40:32.169Z"
 description: This is a custom description for SEO and.
-thumbnail: ../images/thumbs/69c359a7c46a780aa6805340d2101e1c.png
+thumbnail: salty_egg.jpg
 ---
 
 Far far away, behind the word mountains, far from the countries Vokalia and
