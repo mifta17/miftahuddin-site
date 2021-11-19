@@ -1,7 +1,7 @@
 ---
 title: My Second Post!
 date: "2015-05-06T23:46:37.121Z"
-thumbnail: "../images/salty_egg.jpg"
+thumbnail: ../images/thumbs/69c359a7c46a780aa6805340d2101e1c.png
 ---
 
 Wow! I love blogging so much already.

@@ -30,7 +30,7 @@ const BlogIndex = ({ data, location }) => {
               itemScope
               itemType="http://schema.org/Article"
             >
-              <img className="thumbnail" src={post.frontmatter.thumbnail?.absolutePath} alt={post.frontmatter.title} />
+              <img className="thumbnail" src="" alt={post.frontmatter.title} />
               <div className="px-4 py-3 flex flex-col justify-between">
                 <section className="post-item-body">
                   <h2 className="post-item-header">
@@ -75,9 +75,7 @@ export const pageQuery = graphql`
         frontmatter {
           date(formatString: "MMMM DD, YYYY")
           title
-          thumbnail{
-            absolutePath
-          }
+          thumbnail
           description
         }
       }
