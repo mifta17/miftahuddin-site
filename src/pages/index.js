@@ -28,6 +28,7 @@ const BlogIndex = ({ data, location }) => {
           const title = post.frontmatter.title || post.fields.slug
           return (
             <article
+              key={post.fields.slug}
               className="post-list-item md:flex"
               itemScope
               itemType="http://schema.org/Article"
