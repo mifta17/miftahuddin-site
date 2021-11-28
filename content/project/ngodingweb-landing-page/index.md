@@ -7,9 +7,9 @@ github: https://github.com/Miftahuddin-cod/dicoding-belajar-dasar-pemrograman-we
 demo: https://ngodingweb.netlify.app/
 description: Submission Dicoding Belajar Dasar Pemrograman Web
 ---
-# Submission Dicoding : Belajar Dasar Pemrograman Web
+## Submission Dicoding : Belajar Dasar Pemrograman Web
 
-### [](https://github.com/Miftahuddin-cod/dicoding-belajar-dasar-pemrograman-web#kriteria-submission)Kriteria Submission
+#### Kriteria Submission
 
 * Terdapat elemen Header, Footer, Main, Article, dan Aside. (Terpenuhi)
 * Masing-masing elemen wajib berisi konten yang peruntukkannya sesuai dengan elemen tersebut (menerapkan konsep semantic HTML dalam menyusun struktur website). Sebagai contoh: Header berisi judul dan navigation. (Terpenuhi)

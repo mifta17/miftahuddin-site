@@ -7,9 +7,9 @@ github: https://github.com/Miftahuddin-cod/dicoding-belajar-fundamental-front-en
 demo: https://infocofvid19.netlify.app/
 description: Submission Dicoding Belajar Fundamental Front-end Web Developer
 ---
-# Dicoding Submission : Belajar Fundamental Front-end Web Developer
+## Dicoding Submission : Belajar Fundamental Front-end Web Developer
 
-### Kriteria Submission
+#### Kriteria Submission
 
 * Menggunakan standar ES6 dalam menuliskan kode JavaScript (Terpenuhi)
 * Terdapat minimal satu penerapan custom element (Terpenuhi)
@@ -17,17 +17,17 @@ description: Submission Dicoding Belajar Fundamental Front-end Web Developer
 * Memanfaatkan Webpack sebagai environment dalam pengembangan proyek (tahap development) (Terpenuhi)
 * Memanfaatkan API dengan menggunakan konsep AJAX dalam menampilkan data yang dinamis pada aplikasi yang dibuat (Terpenuhi)
 
-### Instalasi
+#### Instalasi
 ```
 npm install
 ```
 
-### Developer Mode
+#### Developer Mode
 ```
 npm run start-dev
 ```
 
-### Build
+#### Build
 ```
 npm run build
 ```
