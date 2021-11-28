@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
-import { FaTwitter, FaInstagram } from "react-icons/fa"
+import { FaTwitter, FaInstagram, FaGithub } from "react-icons/fa"
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -35,6 +35,9 @@ const Layout = ({ location, title, children }) => {
               </a>
               <a className="text-blue-900 hover:text-gray-900 ml-3" href={`https://www.instagram.com/${social?.instagram || ``}`}>
                 <FaInstagram />
+              </a>
+              <a className="text-blue-900 hover:text-gray-900 ml-3" href={`https://github.com/${social?.github || ``}`}>
+                <FaGithub />
               </a>
             </div>
           </div>
