@@ -7,13 +7,13 @@ github: https://github.com/Miftahuddin-cod/dicoding-menjadi-front-end-web-develo
 demo: https://pales-resto.netlify.app/
 description: Submission Dicoding Menjadi Front-end Web Developer Expert
 ---
-# Dicoding Submission : Menjadi Front-end Web Developer Expert
+## Dicoding Submission : Menjadi Front-end Web Developer Expert
 
-## Katalog Restoran + PWA + Testing and Optimized
+### Katalog Restoran + PWA + Testing and Optimized
 
-### Kriteria Submission
+#### Kriteria Submission
 
-##### Submission 1
+###### Submission 1
 * App Bar (Navigation Bar) (Terpenuhi)
 * Hero Element (Jumbotron Element) (Terpenuhi)
 * Daftar Restoran (Terpenuhi)
@@ -21,31 +21,31 @@ description: Submission Dicoding Menjadi Front-end Web Developer Expert
 * Responsibilitas Tampilan (Terpenuhi)
 * Aksesibilitas Website (Terpenuhi)
 
-##### Submission 2
+###### Submission 2
 * Halaman Utama (Daftar Restoran). (Terpenuhi)
 * Halaman Detail Restoran. (Terpenuhi)
 * Halaman Daftar Restoran Favorit. (Terpenuhi)
 * Native Capability. (Terpenuhi)
 * Code Quality. (Terpenuhi)
 
-##### Submission 3 
+###### Submission 3 
 
 * Integration Test. (Terpenuhi)
 * End to End Test. (Terpenuhi)
 * Image Optimization. (Terpenuhi)
 * Bundle Optimization. (Terpenuhi)
 
-### Instalasi
+#### Instalasi
 ```
 npm install
 ```
 
-### Development Mode
+#### Development Mode
 ```
 npm run start-dev
 ```
 
-### Build
+#### Build
 ```
 npm run build
 ```
