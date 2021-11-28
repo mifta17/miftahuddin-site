@@ -27,6 +27,12 @@ const BlogPostTemplate = ({ data, location }) => {
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
         />
+        {post.frontmatter.github ? (
+          <a href={post.frontmatter.github} className="px-4 py-3 rounded-md border border-gray-200 hover:bg-gray-200">Github</a>
+        ) : ''}
+        {post.frontmatter.demo ? (
+          <a href={post.frontmatter.demo} className="ml-3 px-4 py-3 rounded-md border border-gray-200 hover:bg-gray-200">Demo</a>
+        ) : ''}
         <Disqus
           config={{
             url: data.site.siteMetadata?.siteUrl + post.fields.slug,
@@ -62,6 +68,8 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        github
+        demo
       }
     }
   }

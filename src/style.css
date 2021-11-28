@@ -180,11 +180,11 @@ p {
 }
 
 article ul {
-  @apply list-disc list-inside
+  @apply list-disc pl-5 list-outside
 }
 
 article ol {
-  @apply list-decimal list-inside
+  @apply list-decimal pl-5 list-outside
 }
 
 ul,

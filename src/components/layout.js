@@ -30,13 +30,13 @@ const Layout = ({ location, title, children }) => {
           <div className="global-wrapper flex justify-between items-center">
             <Link className="brand" to="/">{title}</Link>
             <div className="text-center flex text-xl">
-              <a className="text-blue-900 hover:text-gray-900" href={`https://twitter.com/${social?.twitter || ``}`}>
+              <a className="text-blue-900 hover:text-gray-900" aria-label="twitter" href={`https://twitter.com/${social?.twitter || ``}`}>
                 <FaTwitter />
               </a>
-              <a className="text-blue-900 hover:text-gray-900 ml-3" href={`https://www.instagram.com/${social?.instagram || ``}`}>
+              <a className="text-blue-900 hover:text-gray-900 ml-3" aria-label="instagram" href={`https://www.instagram.com/${social?.instagram || ``}`}>
                 <FaInstagram />
               </a>
-              <a className="text-blue-900 hover:text-gray-900 ml-3" href={`https://github.com/${social?.github || ``}`}>
+              <a className="text-blue-900 hover:text-gray-900 ml-3" aria-label="github" href={`https://github.com/${social?.github || ``}`}>
                 <FaGithub />
               </a>
             </div>
